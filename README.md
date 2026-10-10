@@ -1,14 +1,11 @@
 # Kurly Market Monitoring
 
-Google Apps Script를 활용해 컬리의 경쟁상품 정보를 정기적으로 수집하고,  
-가격·리뷰·판매상태 변화를 시계열로 추적하기 위해 구축한 시장 모니터링 프로젝트입니다.
+Google Apps Script를 활용해 컬리의 경쟁상품 정보를 정기적으로 수집하고, 가격·리뷰·판매상태 변화를 시계열로 추적하기 위해 구축한 시장 모니터링 프로젝트입니다.
 
 ## Project Overview
 
 온라인 농산물 및 식품 시장의 가격은 할인, 품절, 상품 구성 변화 등에 따라 지속적으로 변합니다.
-
-단일 시점의 가격 조회만으로는 이러한 변화를 파악하기 어렵기 때문에,  
-특정 상품을 지속적으로 추적하여 데이터를 누적하고 가격·리뷰·판매상태 변화를 함께 확인할 수 있는 구조를 설계했습니다.
+단일 시점의 가격 조회만으로는 이러한 변화를 파악하기 어렵기 때문에, 특정 상품을 지속적으로 추적하여 데이터를 누적하고 가격·리뷰·판매상태 변화를 함께 확인할 수 있는 구조를 설계했습니다.
 
 ## Workflow
 
@@ -21,6 +18,7 @@ flowchart TD
     E --> F[가격·리뷰·판매상태 변화 계산]
     F --> G[KURLY_ANALYSIS 생성]
     G --> H[KURLY_DASHBOARD 생성]
+    H --> I[웹앱 분석 화면에서 조회]
 ```
 
 ## Collected Data
@@ -56,7 +54,7 @@ flowchart TD
 
 이를 통해 단순한 현재 가격 조회를 넘어 상품별 가격 변화와 시장 움직임을 지속적으로 확인할 수 있도록 구성했습니다.
 
-## Dashboard
+## Dashboard — Google Sheets
 
 Google Sheets에서 추적상품의 최신 상태와 변화를 확인할 수 있는 경쟁상품 모니터링 대시보드를 생성합니다.
 
@@ -72,20 +70,39 @@ Google Sheets에서 추적상품의 최신 상태와 변화를 확인할 수 있
 - 상품별 판매가격 추이
 - 최신 상품 상세현황
 
-![Kurly Market Monitoring Dashboard](docs/dashboard.png)
+![Google Sheets dashboard](docs/dashboard.png)
+
+## Web Application — Purple Workspace (v2.2)
+
+기존 GAS 데이터 수집·분석 로직과 Google Sheets 저장 구조를 기반으로, 사용자가 시트를 직접 열지 않고 검색, 추적, 분석 결과 조회 등의 작업을 수행할 수 있도록 웹앱 UI를 추가했습니다.
+
+### Main Features
+
+- **상품 검색:** 키워드별 상품 검색 및 카테고리 복수 선택
+- **추적상품:** 수집 상품 확인 및 추적 목록 등록
+- **가격 분석:** KPI, 상품별 판매가·kg당 가격 비교
+- **변화 감지:** 가격 변동, 리뷰 수 증가 및 판매상태 변화
+- **가격 추이:** 여러 상품을 함께 비교하는 날짜별 시계열 그래프
+- **자동수집 설정:** GAS의 시간 기반 트리거 관리
+
+![Purple webapp UI preview](docs/webapp-ui-preview.png)
+
+*UI 미리보기는 로컬의 v2.2 `Index.html`을 브라우저에서 렌더링하고 샘플 데이터를 표시한 이미지입니다. 실제 운영 데이터나 라이브 서비스 화면을 캡처한 것은 아닙니다.*
+
+현재 버전은 **개인 업무용 웹앱**으로 개발되었으며, 상품별 분석 UI와 GAS의 연동 기능은 실제 운영 환경에서 별도 검증이 필요합니다.
 
 ## Tech Stack
 
 - Google Apps Script
 - Google Sheets
-- JavaScript
+- JavaScript / HTML / CSS
 - Scheduled Trigger
+- Browser-based Web App UI
 - E-commerce Product Data
 
 ## Use Case
 
-농산물 및 식품의 온라인 경쟁상품을 지속적으로 관찰하고,  
-단일 가격이 아니라 **가격 변화 · 리뷰 변화 · 판매상태 변화**를 함께 확인하기 위한 데이터 수집 및 분석 Workflow로 활용했습니다.
+농산물 및 식품의 온라인 경쟁상품을 지속적으로 관찰하고, 단일 가격이 아니라 **가격 변화 · 리뷰 변화 · 판매상태 변화**를 함께 확인하기 위한 데이터 수집 및 분석 워크플로로 활용했습니다.
 
 수집된 데이터는 경쟁상품 모니터링과 온라인 시장 가격구조 분석을 위한 기초 데이터로 활용할 수 있습니다.
 
