@@ -1,6 +1,7 @@
 # Kurly Market Monitoring
 
-Google Apps Script를 활용해 컬리의 경쟁상품 정보를 정기적으로 수집하고, 가격·리뷰·판매상태 변화를 시계열로 추적하기 위해 구축한 시장 모니터링 프로젝트입니다.
+Google Apps Script를 활용해 컬리의 경쟁상품 정보를 정기적으로 수집하고, 
+가격·리뷰·판매상태 변화를 시계열로 추적하기 위해 구축한 시장 모니터링 프로젝트입니다.
 
 ## Project Overview
 
