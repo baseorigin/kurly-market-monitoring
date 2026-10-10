@@ -55,7 +55,7 @@ flowchart TD
 
 이를 통해 단순한 현재 가격 조회를 넘어 상품별 가격 변화와 시장 움직임을 지속적으로 확인할 수 있도록 구성했습니다.
 
-## Dashboard — Google Sheets
+## Google Sheets — Dashboard
 
 Google Sheets에서 추적상품의 최신 상태와 변화를 확인할 수 있는 경쟁상품 모니터링 대시보드를 생성합니다.
 
@@ -73,7 +73,7 @@ Google Sheets에서 추적상품의 최신 상태와 변화를 확인할 수 있
 
 ![Google Sheets dashboard](docs/dashboard.png)
 
-## Web Application — Purple Workspace (v2.2)
+## Web Application — Kurly Monitor
 
 기존 GAS 데이터 수집·분석 로직과 Google Sheets 저장 구조를 기반으로, 사용자가 시트를 직접 열지 않고 검색, 추적, 분석 결과 조회 등의 작업을 수행할 수 있도록 웹앱 UI를 추가했습니다.
 
