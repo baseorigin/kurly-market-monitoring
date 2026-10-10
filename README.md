@@ -86,7 +86,7 @@ Google Sheets에서 추적상품의 최신 상태와 변화를 확인할 수 있
 - **가격 추이:** 여러 상품을 함께 비교하는 날짜별 시계열 그래프
 - **자동수집 설정:** GAS의 시간 기반 트리거 관리
 
-![Purple webapp UI preview](docs/webapp-ui-preview.png)
+![Purple webapp UI preview](docs/kurly_webapp_ui_preview.png)
 
 *UI 미리보기는 로컬의 v2.2 `Index.html`을 브라우저에서 렌더링하고 샘플 데이터를 표시한 이미지입니다. 실제 운영 데이터나 라이브 서비스 화면을 캡처한 것은 아닙니다.*
 
